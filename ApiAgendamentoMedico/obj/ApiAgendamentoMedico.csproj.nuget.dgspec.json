@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rusle\\source\\repos\\AgendamentoMedico\\ApiAgendamentoMedico\\ApiAgendamentoMedico.csproj": {}
+    "C:\\git\\AgendamentoConsulta\\ApiAgendamentoMedico\\ApiAgendamentoMedico.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rusle\\source\\repos\\AgendamentoMedico\\ApiAgendamentoMedico\\ApiAgendamentoMedico.csproj": {
+    "C:\\git\\AgendamentoConsulta\\ApiAgendamentoMedico\\ApiAgendamentoMedico.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rusle\\source\\repos\\AgendamentoMedico\\ApiAgendamentoMedico\\ApiAgendamentoMedico.csproj",
+        "projectUniqueName": "C:\\git\\AgendamentoConsulta\\ApiAgendamentoMedico\\ApiAgendamentoMedico.csproj",
         "projectName": "ApiAgendamentoMedico",
-        "projectPath": "C:\\Users\\rusle\\source\\repos\\AgendamentoMedico\\ApiAgendamentoMedico\\ApiAgendamentoMedico.csproj",
+        "projectPath": "C:\\git\\AgendamentoConsulta\\ApiAgendamentoMedico\\ApiAgendamentoMedico.csproj",
         "packagesPath": "C:\\Users\\rusle\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rusle\\source\\repos\\AgendamentoMedico\\ApiAgendamentoMedico\\obj\\",
+        "outputPath": "C:\\git\\AgendamentoConsulta\\ApiAgendamentoMedico\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
