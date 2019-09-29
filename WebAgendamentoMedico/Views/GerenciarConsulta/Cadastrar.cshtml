@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Cadastrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Cadastrar Agendamentos
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="dataHoraInicialConsulta">Data Inicio Consulta:</label>
+                <input id="dataHoraInicialConsulta" name="dataHoraInicialConsulta" class="form-control" type="date" />
+            </div>
+            <div class="col-md-6">
+                <label for="horaInicialConsulta">Hora Inicio Consulta:</label>
+                <input id="horaInicialConsulta" name="horaInicialConsulta" class="form-control" type="time" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label for="horaFinalConsulta">Hora Final Consulta:</label>
+                <input id="horaFinalConsulta" name="horaFinalConsulta" class="form-control" type="time" />
+            </div>
+            <div class="col-md-6">
+                <label for="nomePaciente">Nome:</label>
+                <input id="nomePaciente" name="nomePaciente" class="form-control" type="text" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <label for="observacaoConsulta">Observação:</label>
+                <textarea id="observacaoConsulta" nome="observacaoConsulta" class="form-control"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-muted">
+        <a href="#" class="btn btn-primary">Cadastrar</a>
+    </div>
+
+
+</div>
+
+@section scripts
+{
+    <script type="text/javascript" src="~/js/consulta.js"></script>
+}

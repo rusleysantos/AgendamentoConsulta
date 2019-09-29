@@ -1,5 +1,10 @@
 ﻿/* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
+
+.espaco-form {
+    margin-bottom: 15px;
+}
+
 .img-logo {
     width: 194px;
     height: 65px;

@@ -23,8 +23,6 @@ namespace WebAgendamentoMedico.Controllers
             ctxAgendamento.Add(paciente);
             ctxAgendamento.SaveChanges();
 
-            
-
             return View();
         }
 

@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Dados\Dados.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Util\" />
+  </ItemGroup>
+
 </Project>

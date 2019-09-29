@@ -22,7 +22,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-        <a class="navbar-brand mr-1" href="index.html"><img class="img-logo" src="~/images/logo.png" /></a>
+        <a class="navbar-brand mr-1" href="@Url.Action("Index","Home")"><img class="img-logo" src="~/images/logo.png" /></a>
 
         <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
             <i class="fas fa-bars"></i>
@@ -50,16 +50,22 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                     <h6 class="dropdown-header">Gerenciar</h6>
-                    <a class="dropdown-item" href="login.html">Cadastrar</a>
-                    <a class="dropdown-item" href="login.html">Visualizar</a>
-                    <a class="dropdown-item" href="register.html">Alterar</a>
+                    <a class="dropdown-item" href="@Url.Action("Cadastrar","GerenciarPaciente")">Cadastrar</a>
+                    <a class="dropdown-item" href="@Url.Action("Consultar","GerenciarPaciente")">Consultar</a>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-heartbeat"></i>
                     <span>Consultas</span>
                 </a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                    <h6 class="dropdown-header">Gerenciar</h6>
+                    <a class="dropdown-item" href="@Url.Action("Cadastrar","GerenciarConsulta")">Cadastrar</a>
+                    <a class="dropdown-item" href="@Url.Action("Consultar","GerenciarConsulta")">Consultar</a>
+                </div>
             </li>
         </ul>
 
@@ -71,71 +77,7 @@
 
 
 
-                <!-- Icon Cards-->
-                <div class="row">
-                    <div class="col-xl-3 col-sm-6 mb-3">
-                        <div class="card text-white bg-warning o-hidden h-100">
-                            <div class="card-body">
-                                <div class="card-body-icon">
-                                    <i class="fas fa-fw fa-list"></i>
-                                </div>
-                                <div class="mr-5">1 nova(s) consultas</div>
-                            </div>
-                            <a class="card-footer text-white clearfix small z-1" href="#">
-                                <span class="float-left">Veja mais</span>
-                                <span class="float-right">
-                                    <i class="fas fa-angle-right"></i>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
-              
-
-                <!-- DataTables Example -->
-                <div class="card mb-3">
-                    <div class="card-header">
-                        <i class="fas fa-table"></i>
-                        Consultas do Dia
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>Paciete</th>
-                                        <th>Data</th>
-                                        <th>Hora Inicial</th>
-                                        <th>Hora Final</th>
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>Paciete</th>
-                                        <th>Data</th>
-                                        <th>Hora Inicial</th>
-                                        <th>Hora Final</th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                    </tr>                                
-                                    <tr>
-                                        <td>Donna Snider</td>
-                                        <td>Customer Support</td>
-                                        <td>New York</td>
-                                        <td>27</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
 
             </div>
             <!-- /.container-fluid -->
@@ -190,6 +132,7 @@
     @* JS Sb adm *@
     <script src="~/js/sb-admin.min.js"></script>
 
+    @RenderSection("scripts", required: false)
 
 </body>
 
