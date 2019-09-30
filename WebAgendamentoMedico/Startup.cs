@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -55,6 +56,10 @@ namespace WebAgendamentoMedico
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            // set
+            string baseDir = env.ContentRootPath;
+            AppDomain.CurrentDomain.SetData("DataDirectory", Path.Combine(baseDir, "App_Data"));
         }
     }
 }
