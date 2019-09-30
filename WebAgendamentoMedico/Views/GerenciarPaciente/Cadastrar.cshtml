@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Cadastrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="card">
+        <div class="card-header">
+            Cadastrar Paciente
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="nomePaciente">Nome</label>
+                    <input id="nomePaciente" name="nomePaciente" class="form-control" type="text" />
+                </div>
+           
+                <div class="col-md-6">
+                    <label for="nomePaciente">Nacimento</label>
+                    <input id="nascimentoPaciente" name="nascimentoPaciente" class="form-control" type="date" />
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer text-muted">
+            <button id="btnCadastrarPaciente" type="button" class="btn btn-primary" onclick="cadastrarPaciente()"> Cadastrar</button>
+        </div>
+    </div>
+
+
+@section scripts
+{
+    <script type="text/javascript" src="~/js/paciente.js"></script>
+}
+

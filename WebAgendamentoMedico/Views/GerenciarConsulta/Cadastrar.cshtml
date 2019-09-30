@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Cadastrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-app="agendamentoApp">
+
+    <div class="card">
+        <div class="card-header">
+            Cadastrar Agendamentos
+        </div>
+        <div ng-controller="myCtrl" class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="dataHoraInicialConsulta">Data Inicio Consulta:</label>
+                    <input id="dataConsulta" name="dataHoraInicialConsulta" class="form-control" type="date" />
+                </div>
+                <div class="col-md-6">
+                    <label for="horaInicialConsulta">Hora Inicio Consulta:</label>
+                    <input id="horaInicialConsulta" name="horaInicialConsulta" class="form-control" type="time" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="horaFinalConsulta">Hora Final Consulta:</label>
+                    <input id="horaFinalConsulta" name="horaFinalConsulta" class="form-control" type="time" />
+                </div>
+                <div class="col-md-6">
+                    <label for="nomePaciente">Nome:</label>
+                    <select id="idPaciente" name="idPaciente" class="form-control">
+                        <option>Escolha um paciente</option>
+                        <option ng-repeat="paciente in pacientes" value="{{ paciente.Id }}">{{ paciente.Nome }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="observacaoConsulta">Observação:</label>
+                    <textarea id="observacaoConsulta" nome="observacaoConsulta" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <button id="btnCadastrarPaciente" type="button" class="btn btn-primary" onclick="cadastrarAgendamento()"> Cadastrar</button>
+        </div>
+    </div>
+
+</div>
+
+@section scripts
+{
+    <script type="text/javascript" src="~/js/consulta.js"></script>
+
+}
