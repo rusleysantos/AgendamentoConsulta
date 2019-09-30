@@ -11,7 +11,7 @@
 * Fazer Dashboard (Index) pegar valores do banco.
 
 ## Alterações sendo executas:
-* Correções de erros gramáticais estão sendo feitos e "commitados" sempre que encontrados durantes os testes.
+* Correções de erros gramáticais estão sendo feitos e "commitados" sempre que encontrados durante os testes.
 
 
 ## Orientações Gerais
