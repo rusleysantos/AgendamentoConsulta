@@ -9,27 +9,38 @@
         Consultar Pacientes
     </div>
     <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>Paciete</th>
-                        <th>Nascimento</th>
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>Paciete</th>
-                        <th>Nascimento</th>
-                    </tr>
-                </tfoot>
-                <tbody>
-                    <tr>
-                        <td>Tiger Nixon</td>
-                        <td>15/10/1995</td>
-                    </tr>
-                </tbody>
-            </table>
+
+        <div ng-app="pacienteApp">
+
+            <div id="tblPacientes" class="table-responsive">
+                <table ng-controller="myCtrl" class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Identificação</th>
+                            <th>Paciete</th>
+                            <th>Nascimento</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Identificação</th>
+                            <th>Paciete</th>
+                            <th>Nascimento</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+
+                        <tr ng-repeat="paciente in pacientes">
+                            <td>{{paciente.Id}}</td>
+                            <td>{{paciente.Nome}}</td>
+                            <td>{{paciente.Nascimento}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
         </div>
     </div>
 </div>

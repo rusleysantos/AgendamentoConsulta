@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Consultar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -9,27 +8,33 @@
         Consultar Agendamentos
     </div>
     <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>Paciete</th>
-                        <th>Nascimento</th>
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>Paciete</th>
-                        <th>Nascimento</th>
-                    </tr>
-                </tfoot>
-                <tbody>
-                    <tr>
-                        <td>Tiger Nixon</td>
-                        <td>15/10/1995</td>
-                    </tr>
-                </tbody>
-            </table>
+
+        <div ng-app="agendamentoAgendaApp">
+            <div class="table-responsive">
+                <table ng-controller="exibirConsulta" class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Paciete</th>
+                            <th>Data/Hora Inicial</th>
+                            <th>Data/Hora FInal</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Paciete</th>
+                            <th>Data/Hora Inicial</th>
+                            <th>Data/Hora FInal</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr ng-repeat="consulta in consultas">
+                            <td>{{consulta.Paciente[0].Nome}}</td>
+                            <td>{{consulta.DataHoraInicialConsulta}}</td>
+                            <td>{{consulta.DataHoraFinalConsulta}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -37,5 +42,5 @@
 
 @section scripts
 {
-    <script type="text/javascript" src="~/js/consulta.js"></script>
+<script type="text/javascript" src="~/js/consulta.js"></script>
 }

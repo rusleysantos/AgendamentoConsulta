@@ -1,26 +1,37 @@
-﻿function consultarPaciente() {
+﻿
+var app = angular.module("pacienteApp", []);
+app.controller("myCtrl", function ($scope) {
+    $scope.pacientes = consultarPaciente();
+});
+
+//Função responsável por retornar todos os pacientes cadastrados no sistema
+function consultarPaciente() {
 
     let url = "getPaciente/GerenciarPaciente"
+    var resultado;
 
     $.ajax(
         {
             type: "GET",
             dataType: "json",
             url: url,
+            async: false,
 
             success: function (response) {
-                debugger;
+ 
+                resultado = response.resultado
+  
             },
             error: function (error) {
 
                 criarAlerta("error", "Erro!", "Não foi possível acessar o servidor")
 
             }
-
         });
 
+    return resultado;
 }
-
+//Função responsável por cadastrar pacientes
 function cadastrarPaciente() {
 
     let url = "setPaciente/GerenciarPaciente"

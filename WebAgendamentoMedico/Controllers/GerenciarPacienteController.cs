@@ -54,6 +54,10 @@ namespace WebAgendamentoMedico.Controllers
             }
         }
 
+        /// <summary>
+        /// Metodo responsável por cadastrar usuários no banco
+        /// </summary>
+        /// <returns>Bool informando se foi inserido ou não</returns>
         public bool setPaciente(string nomePaciente, string nascimentoPaciente)
         {
             if (nomePaciente != string.Empty && nascimentoPaciente != string.Empty)
