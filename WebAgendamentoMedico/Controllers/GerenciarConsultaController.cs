@@ -74,17 +74,17 @@ namespace WebAgendamentoMedico.Controllers
 
                 consulta.DataHoraInicialConsulta = Convert.ToDateTime(String.Format("{0} {1}", dataConsulta, horaInicialConsulta));
                 consulta.DataHoraFinalConsulta = Convert.ToDateTime(String.Format("{0} {1}", dataConsulta, horaFinalConsulta));
-                if (consulta.DataHoraInicialConsulta < consulta.DataHoraFinalConsulta) {
-                    return false;
-                }
+                //if (consulta.DataHoraInicialConsulta < consulta.DataHoraFinalConsulta) {
+                //    return false;
+                //}
                 consulta.Observacoes = observacaoConsulta;
                 consulta.Paciente = Convert.ToInt32(idPaciente);
 
                 //ctxAgendamento.Consulta.Where(x => x.DataHoraInicialConsulta == consulta.DataHoraInicialConsulta && consulta.DataHoraFinalConsulta == x.DataHoraFinalConsulta)
-                if (ctxAgendamento.Consulta.Any(x => (x.DataHoraInicialConsulta < consulta.DataHoraInicialConsulta && consulta.DataHoraInicialConsulta > x.DataHoraFinalConsulta) ||
-                 (x.DataHoraInicialConsulta < consulta.DataHoraFinalConsulta && consulta.DataHoraFinalConsulta > x.DataHoraFinalConsulta))) {
-                    return false;
-                }
+                //if (ctxAgendamento.Consulta.Any(x => (x.DataHoraInicialConsulta < consulta.DataHoraInicialConsulta && consulta.DataHoraInicialConsulta > x.DataHoraFinalConsulta) ||
+                // (x.DataHoraInicialConsulta < consulta.DataHoraFinalConsulta && consulta.DataHoraFinalConsulta > x.DataHoraFinalConsulta))) {
+                //    return false;
+                //}
 
                 try
                 {
@@ -93,7 +93,7 @@ namespace WebAgendamentoMedico.Controllers
 
                     return true;
                 }
-                catch(Exception e)
+                catch
                 {
                     return false;
                 }
