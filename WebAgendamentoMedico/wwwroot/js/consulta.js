@@ -85,6 +85,7 @@ function pacientes() {
     let url = "pacientes/GerenciarConsulta"
     var resultado;
 
+    debugger;
     $.ajax(
         {
             type: "GET",

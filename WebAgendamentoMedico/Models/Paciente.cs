@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Dados.Models
+namespace WebAgendamentoMedico.Models
 {
     public partial class Paciente
     {

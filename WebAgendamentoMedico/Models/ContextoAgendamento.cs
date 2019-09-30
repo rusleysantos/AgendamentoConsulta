@@ -1,8 +1,9 @@
 ﻿using System;
+using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Dados.Models
+namespace WebAgendamentoMedico.Models
 {
     public partial class ContextoAgendamento : DbContext
     {
@@ -20,9 +21,19 @@ namespace Dados.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            ///Alerta gambiarra
+            ///Como o banco e um .mdf a string de conexão deve ter seu caminho, tive problemas para pegar o caminho em outra solução
+
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\git\\AgendamentoConsulta\\Dados\\Agendamento.mdf;Integrated Security=True");
+#if DEBUG
+                var caminho = Path.Combine(Environment.CurrentDirectory, "bin", "Debug", "netcoreapp2.1", "Agendamento.mdf");
+#elif RELEASE
+                var caminho = Path.Combine(Environment.CurrentDirectory, "bin", "Release", "netcoreapp2.1", "Agendamento.mdf");
+#endif
+
+                //optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rusley.santos\\Desktop\\projeto\\AgendamentoConsulta\\Dados\\Agendamento.mdf;Integrated Security=True");
+                optionsBuilder.UseSqlServer($"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={caminho};Integrated Security=True");
             }
         }
 
@@ -30,8 +41,6 @@ namespace Dados.Models
         {
             modelBuilder.Entity<Consulta>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.Property(e => e.DataHoraFinalConsulta).HasColumnType("datetime");
 
                 entity.Property(e => e.DataHoraInicialConsulta).HasColumnType("datetime");
@@ -42,14 +51,14 @@ namespace Dados.Models
                     .WithMany(p => p.Consulta)
                     .HasForeignKey(d => d.Paciente)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Consulta__Pacien__36B12243");
+                    .HasConstraintName("FK__Consulta__Pacien__160F4887");
             });
 
             modelBuilder.Entity<Paciente>(entity =>
             {
-                entity.Property(e => e.Nascimento).HasMaxLength(10);
+                entity.Property(e => e.Nascimento).HasMaxLength(12);
 
-                entity.Property(e => e.Nome).HasMaxLength(10);
+                entity.Property(e => e.Nome).HasColumnType("text");
             });
         }
     }
