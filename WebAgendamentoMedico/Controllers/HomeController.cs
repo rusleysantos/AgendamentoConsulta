@@ -17,11 +17,11 @@ namespace WebAgendamentoMedico.Controllers
             ContextoAgendamento ctxAgendamento = new ContextoAgendamento();
             
 
-            paciente.Nome = "Guilherme Briggs";
-            paciente.Nascimento = "10101995";
+            //paciente.Nome = "Guilherme Briggs";
+            //paciente.Nascimento = "10101995";
 
-            ctxAgendamento.Add(paciente);
-            ctxAgendamento.SaveChanges();
+            //ctxAgendamento.Add(paciente);
+            //ctxAgendamento.SaveChanges();
 
             return View();
         }
