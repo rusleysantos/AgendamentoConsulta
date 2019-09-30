@@ -6,6 +6,8 @@
 ## Alterações futuras:
 * Devido o banco ser um .mdf em outra .dll se faz necessária correções na string de conexão que e composta pela caminho do arquivo. 
 * Corrigir regra para inserção de usuário, até o momento não consigui debuggar devido o breakpoint estar desincronizado com o bin.
+* Loads durante as requisições Ajax;
+* Melhorar mascara dos campos de data.
 
 ## Orientações Gerais
 * O resultado da solução deverá ser publicado no seu GitHub.
