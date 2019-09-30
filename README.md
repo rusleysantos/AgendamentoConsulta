@@ -10,6 +10,9 @@
 * Melhorar mascara dos campos de data;
 * Fazer Dashboard (Index) pegar valores do banco.
 
+## Alterações sendo executas:
+* Correções de erros gramáticais estão sendo feitos e "commitados" sempre que encontrados durantes os testes.
+
 
 ## Orientações Gerais
 * O resultado da solução deverá ser publicado no seu GitHub.
