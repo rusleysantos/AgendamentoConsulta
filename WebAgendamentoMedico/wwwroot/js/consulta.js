@@ -6,12 +6,7 @@ app.controller("myCtrl", function ($scope) {
 var appConsulta = angular.module("agendamentoAgendaApp", []);
 appConsulta.controller("exibirConsulta", function ($scope) {
     $scope.consultas = consultarAgendamentos();
-
-    debugger;
 });
-
-
-
 
 //Função responsável por retornar todos os agendamentos cadastrados no sistema
 function consultarAgendamentos() {

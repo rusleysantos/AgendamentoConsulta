@@ -78,6 +78,7 @@ namespace WebAgendamentoMedico.Controllers
                 consulta.DataHoraFinalConsulta = Convert.ToDateTime(String.Format("{0} {1}", dataConsulta, horaFinalConsulta));
                 consulta.Observacoes = observacaoConsulta;
                 consulta.Paciente = Convert.ToInt32(idPaciente);
+               
 
                 try
                 {
@@ -86,7 +87,7 @@ namespace WebAgendamentoMedico.Controllers
 
                     return true;
                 }
-                catch
+                catch(Exception e)
                 {
                     return false;
                 }
