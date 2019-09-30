@@ -1,7 +1,7 @@
 # AgendamentoConsulta
 
 ## Observações:
-* A aplicação está funcionando, porém devido algumas limitações que não existirão em um projeto de verdade (banco de dados .mdf) alguns itens serão corrigidos na release 1.0.1, vide próximo item.
+* A aplicação está funcionando, porém devido algumas limitações que não existirão em um projeto de verdade (banco de dados .mdf) alguns itens serão corrigidos na release 1.0.1, vide próximo item, vide próximo item.
 
 ## Alterações futuras:
 * Devido o banco ser um .mdf em outra .dll se faz necessária correções na string de conexão que e composta pela caminho do arquivo. 
