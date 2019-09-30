@@ -8,6 +8,7 @@
 * Corrigir regra para inserção de usuário, até o momento não consigui debuggar devido o breakpoint estar desincronizado com o bin;
 * Loads durante as requisições Ajax;
 * Melhorar mascara dos campos de data.
+* Fazer Dashboard (Index) pegar valores do banco.
 
 
 ## Orientações Gerais
