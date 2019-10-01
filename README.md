@@ -16,7 +16,6 @@
 ## Alterações futuras:
 * Loads durante as requisições Ajax;
 * Melhorar mascara dos campos de data;
-* Fazer Dashboard (Index) pegar valores do banco.
 
 ## Alterações sendo executas:
 * Correções de erros gramáticais estão sendo feitos e "commitados" sempre que encontrados durante os testes.
