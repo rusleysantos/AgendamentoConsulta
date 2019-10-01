@@ -21,18 +21,11 @@ namespace WebAgendamentoMedico.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            ///Alerta gambiarra
-            ///Como o banco e um .mdf a string de conexão deve ter seu caminho, tive problemas para pegar o caminho em outra solução
-
             if (!optionsBuilder.IsConfigured)
-            {
-#if DEBUG
-                var caminho = Path.Combine(Environment.CurrentDirectory, "bin", "Debug", "netcoreapp2.1", "Agendamento.mdf");
-#elif RELEASE
-                var caminho = Path.Combine(Environment.CurrentDirectory, "bin", "Release", "netcoreapp2.1", "Agendamento.mdf");
-#endif
-
-                //optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rusley.santos\\Desktop\\projeto\\AgendamentoConsulta\\Dados\\Agendamento.mdf;Integrated Security=True");
+            {   
+                //Solução de contorno:
+                //Favor adicionar o caminho fisico até o banco MDF no seu computador na varável caminho.
+                string caminho = "C:\\git\\AgendamentoConsulta\\Dados\\Agendamento.mdf";
                 optionsBuilder.UseSqlServer($"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={caminho};Integrated Security=True");
             }
         }
