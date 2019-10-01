@@ -17,10 +17,6 @@
 * Loads durante as requisições Ajax;
 * Melhorar mascara dos campos de data;
 
-## Alterações sendo executas:
-* Correções de erros gramáticais estão sendo feitos e "commitados" sempre que encontrados durante os testes.
-
-
 ## Orientações Gerais
 * O resultado da solução deverá ser publicado no seu GitHub.
 * Assim que concluir, envie um e-mail para desafio@itixti.com.br com a URL do repositório da solução.
