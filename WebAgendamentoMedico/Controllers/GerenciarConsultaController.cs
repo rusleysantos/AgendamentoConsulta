@@ -86,8 +86,6 @@ namespace WebAgendamentoMedico.Controllers
                     return false;
                 }
 
-        
-
                 try
                 {
                     ctxAgendamento.Add(consulta);
