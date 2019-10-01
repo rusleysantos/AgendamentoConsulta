@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dados", "Dados\Dados.csproj", "{68C49B06-1D8C-400F-9FFA-CA1C89F100BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAgendamentoMedico", "WebAgendamentoMedico\WebAgendamentoMedico.csproj", "{C6DE6755-31D7-4628-AC86-70EFA74B81DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAgendamentoMedico", "WebAgendamentoMedico\WebAgendamentoMedico.csproj", "{C6DE6755-31D7-4628-AC86-70EFA74B81DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{AE6C9369-4804-4495-A90C-010E367A0AF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C6DE6755-31D7-4628-AC86-70EFA74B81DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6DE6755-31D7-4628-AC86-70EFA74B81DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6DE6755-31D7-4628-AC86-70EFA74B81DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE6C9369-4804-4495-A90C-010E367A0AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE6C9369-4804-4495-A90C-010E367A0AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE6C9369-4804-4495-A90C-010E367A0AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE6C9369-4804-4495-A90C-010E367A0AF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
