@@ -81,11 +81,12 @@ namespace WebAgendamentoMedico.Controllers
                 consulta.Observacoes = observacaoConsulta;
                 consulta.Paciente = Convert.ToInt32(idPaciente);
 
-                if (ctxAgendamento.Consulta.Any(x => (x.DataHoraInicialConsulta <= consulta.DataHoraInicialConsulta && consulta.DataHoraInicialConsulta >= x.DataHoraFinalConsulta) ||
-                 (x.DataHoraInicialConsulta <= consulta.DataHoraFinalConsulta && consulta.DataHoraFinalConsulta >= x.DataHoraFinalConsulta)))
+                if (ctxAgendamento.Consulta.Where(x => consulta.DataHoraInicialConsulta >= x.DataHoraInicialConsulta &&  x.DataHoraFinalConsulta >= consulta.DataHoraFinalConsulta).Count() > 0)
                 {
                     return false;
                 }
+
+        
 
                 try
                 {
