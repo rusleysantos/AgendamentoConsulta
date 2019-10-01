@@ -1,10 +1,19 @@
 # AgendamentoConsulta
 
+## Atenção (Alterando string de conexão):
+* **Por se tratar de um banco .MDF se faz necessário adicionar o caminho físico até o banco dentro da string de conexão;**
+
+* **No projeto procure o seguinte arquivo:** *C:\git\AgendamentoConsulta\WebAgendamentoMedico\Models\ContextoAgendamento.cs altere o caminho que está na variável "caminho";*
+![](https://i.imgur.com/kpASpG9.png)
+
+* **Adicionar o caminho físico do seu computador até Agendamento.mdf EX:**
+*(EX: C:\\\ git\\\AgendamentoConsulta\\\Dados\\\Agendamento.mdf)*
+![](https://i.imgur.com/88qpceR.png)
+
 ## Observações:
 * A aplicação está funcionando, porém devido algumas limitações que não existirão em um projeto de verdade (banco de dados .mdf) alguns itens serão corrigidos na release 1.0.1.
 
 ## Alterações futuras:
-* Devido o banco ser um .mdf em outra .dll se faz necessária correções na string de conexão que e composta pela caminho do arquivo; 
 * Loads durante as requisições Ajax;
 * Melhorar mascara dos campos de data;
 * Fazer Dashboard (Index) pegar valores do banco.
