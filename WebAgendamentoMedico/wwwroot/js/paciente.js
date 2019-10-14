@@ -7,7 +7,7 @@ app.controller("myCtrl", function ($scope) {
 //Função responsável por retornar todos os pacientes cadastrados no sistema
 function consultarPaciente() {
 
-    let url = "getPaciente/GerenciarPaciente"
+    let url = "Get/GerenciarPaciente"
     var resultado;
 
     $.ajax(
@@ -34,7 +34,7 @@ function consultarPaciente() {
 //Função responsável por cadastrar pacientes
 function cadastrarPaciente() {
 
-    let url = "setPaciente/GerenciarPaciente"
+    let url = "Set/GerenciarPaciente"
 
     $.ajax(
         {

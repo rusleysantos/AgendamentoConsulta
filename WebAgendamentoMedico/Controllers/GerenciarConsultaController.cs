@@ -3,7 +3,8 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Servicos.GerenciarConsulta;
-using WebAgendamentoMedico.Models;
+using Servicos.GerenciarPaciente;
+
 
 namespace WebAgendamentoMedico.Controllers
 {
@@ -37,13 +38,12 @@ namespace WebAgendamentoMedico.Controllers
 
         /// <summary>
         /// Retorna todos os pacientes no sistemas. 
-        /// Lembrar: Mudar para uma classe util
         /// </summary>
         /// <returns>Pacientes</returns>
         public string pacientes()
         {
-            GerenciarPacienteController paciente = new GerenciarPacienteController();
-            return paciente.getPaciente();
+            BuscarPaciente paciente = new BuscarPaciente();
+            return paciente.Buscar();
         }
 
     }
