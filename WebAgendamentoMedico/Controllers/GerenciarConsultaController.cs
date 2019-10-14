@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Servicos.GerenciarConsulta;
 using WebAgendamentoMedico.Models;
 
 namespace WebAgendamentoMedico.Controllers
@@ -18,90 +19,20 @@ namespace WebAgendamentoMedico.Controllers
             return View();
         }
 
-        /// <summary>
-        /// Metodo responsável por retornar todos as consultas do banco
-        /// </summary>
-        /// <returns>Json de consultas</returns>
-        public string getConsulta()
+        public string Get()
         {
-            ContextoAgendamento ctxAgendamento = new ContextoAgendamento();
-
-            try
-            {
-                var retorno = new
-                {
-                    status = "sucesso",
-
-                    resultado = ctxAgendamento.Consulta.Select
-                    (x => new
-                    {
-                        x.DataHoraInicialConsulta,
-                        x.DataHoraFinalConsulta,
-                        Paciente = ctxAgendamento.Paciente.Where(y => y.Id == x.Paciente)
-                    }),
-                };
-
-                string json = JsonConvert.SerializeObject(retorno);
-
-                return json;
-            }
-            catch(Exception)
-            {
-
-                var retorno = new
-                {
-                    status = "erro",
-                    resultado = "Erro ao consultar base de dados"
-                };
-
-                return JsonConvert.SerializeObject(retorno);
-            }
+            BuscarConsulta consulta = new BuscarConsulta();
+            
+            return consulta.Buscar();
         }
 
-        /// <summary>
-        /// Metodo responsável por cadastrar usuários no banco
-        /// </summary>
-        /// <returns>Bool informando se foi inserido ou não</returns>
-        public bool setConsulta(string dataConsulta, string observacaoConsulta,
+        public bool Set(string dataConsulta, string observacaoConsulta,
         string horaInicialConsulta, string horaFinalConsulta, string idPaciente)
         {
+            InserirConsulta consulta = new InserirConsulta();
+            
+            return consulta.Inserir(dataConsulta, observacaoConsulta, horaInicialConsulta, horaFinalConsulta, idPaciente);
 
-            if (dataConsulta != string.Empty && idPaciente != string.Empty && horaInicialConsulta != string.Empty)
-            {
-
-                ContextoAgendamento ctxAgendamento = new ContextoAgendamento();
-                Consulta consulta = new Consulta();
-
-                consulta.DataHoraInicialConsulta = Convert.ToDateTime(String.Format("{0} {1}", dataConsulta, horaInicialConsulta));
-                consulta.DataHoraFinalConsulta = Convert.ToDateTime(String.Format("{0} {1}", dataConsulta, horaFinalConsulta));
-                if (consulta.DataHoraInicialConsulta > consulta.DataHoraFinalConsulta)
-                {
-                    return false;
-                }
-                consulta.Observacoes = observacaoConsulta;
-                consulta.Paciente = Convert.ToInt32(idPaciente);
-
-                if (ctxAgendamento.Consulta.Where(x => consulta.DataHoraInicialConsulta >= x.DataHoraInicialConsulta &&  x.DataHoraFinalConsulta >= consulta.DataHoraFinalConsulta).Count() > 0)
-                {
-                    return false;
-                }
-
-                try
-                {
-                    ctxAgendamento.Add(consulta);
-                    ctxAgendamento.SaveChanges();
-
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
         }
 
         /// <summary>

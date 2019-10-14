@@ -11,7 +11,7 @@ appConsulta.controller("exibirConsulta", function ($scope) {
 //Função responsável por retornar todos os agendamentos cadastrados no sistema
 function consultarAgendamentos() {
 
-    let url = "getConsulta/GerenciarConsulta"
+    let url = "Get/GerenciarConsulta"
     var resultado;
 
     $.ajax(
@@ -38,7 +38,7 @@ function consultarAgendamentos() {
 //Função responsável por cadastrar agendamentos
 function cadastrarAgendamento() {
 
-    let url = "setConsulta/GerenciarConsulta"
+    let url = "Set/GerenciarConsulta"
 
     $.ajax(
         {
